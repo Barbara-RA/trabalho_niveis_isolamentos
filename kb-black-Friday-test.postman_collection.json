@@ -1,0 +1,237 @@
+{
+    "info": {
+        "name": "kb-black-Friday-test",
+        "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+    },
+    "item": [
+        {
+            "name": "Sem Locks",
+            "request": {
+                "method": "POST",
+                "header": [
+                    {
+                        "key": "Content-Type",
+                        "value": "application/json",
+                        "type": "text"
+                    }
+                ],
+                "body": {
+                    "mode": "raw",
+                    "raw": "{\n    \"produtoId\": 3,\n    \"quantidade\": 3,\n    \"clienteId\": \"C001\"\n}"
+                },
+                "url": {
+                    "raw": "http://localhost:8080/pedido/novo",
+                    "protocol": "http",
+                    "host": [
+                        "localhost"
+                    ],
+                    "port": "8080",
+                    "path": [
+                        "pedido",
+                        "novo"
+                    ]
+                }
+            },
+            "event": [
+                {
+                    "listen": "test",
+                    "script": {
+                        "exec": [
+                            "if (!pm.globals.has('tempo_total')) {",
+                            "    pm.globals.set('tempo_total', '0');",
+                            "    pm.globals.set('sucessos', '0');",
+                            "    pm.globals.set('conflitos', '0');",
+                            "    pm.globals.set('outros_erros', '0');",
+                            "    pm.globals.set('quantidade_requisicoes', '0');",
+                            "}",
+                            "const tempoResposta = pm.response.responseTime;",
+                            "let tempoTotal = parseInt(pm.globals.get('tempo_total')) + tempoResposta;",
+                            "pm.globals.set('tempo_total', tempoTotal);",
+                            "let qtdRequisicoes = parseInt(pm.globals.get('quantidade_requisicoes')) + 1;",
+                            "pm.globals.set('quantidade_requisicoes', qtdRequisicoes);",
+                            "if (pm.response.code === 200) {",
+                            "    let sucessos = parseInt(pm.globals.get('sucessos')) + 1;",
+                            "    pm.globals.set('sucessos', sucessos);",
+                            "} else if (pm.response.code === 409) {",
+                            "    let conflitos = parseInt(pm.globals.get('conflitos')) + 1;",
+                            "    pm.globals.set('conflitos', conflitos);",
+                            "} else {",
+                            "    let outrosErros = parseInt(pm.globals.get('outros_erros')) + 1;",
+                            "    pm.globals.set('outros_erros', outrosErros);",
+                            "}"
+                        ]
+                    }
+                }
+            ],
+            "response": []
+        },
+        {
+            "name": "Com Lock Otimista",
+            "request": {
+                "method": "POST",
+                "header": [
+                    {
+                        "key": "Content-Type",
+                        "value": "application/json",
+                        "type": "text"
+                    }
+                ],
+                "body": {
+                    "mode": "raw",
+                    "raw": "{\n    \"produtoId\": 3,\n    \"quantidade\": 3,\n    \"clienteId\": \"C002\"\n}"
+                },
+                "url": {
+                    "raw": "http://localhost:8080/pedido_otimista/novo",
+                    "protocol": "http",
+                    "host": [
+                        "localhost"
+                    ],
+                    "port": "8080",
+                    "path": [
+                        "pedido_otimista",
+                        "novo"
+                    ]
+                }
+            },
+            "event": [
+                {
+                    "listen": "test",
+                    "script": {
+                        "exec": [
+                            "if (!pm.globals.has('tempo_total')) {",
+                            "    pm.globals.set('tempo_total', '0');",
+                            "    pm.globals.set('sucessos', '0');",
+                            "    pm.globals.set('conflitos', '0');",
+                            "    pm.globals.set('outros_erros', '0');",
+                            "    pm.globals.set('quantidade_requisicoes', '0');",
+                            "}",
+                            "const tempoResposta = pm.response.responseTime;",
+                            "let tempoTotal = parseInt(pm.globals.get('tempo_total')) + tempoResposta;",
+                            "pm.globals.set('tempo_total', tempoTotal);",
+                            "let qtdRequisicoes = parseInt(pm.globals.get('quantidade_requisicoes')) + 1;",
+                            "pm.globals.set('quantidade_requisicoes', qtdRequisicoes);",
+                            "if (pm.response.code === 200) {",
+                            "    let sucessos = parseInt(pm.globals.get('sucessos')) + 1;",
+                            "    pm.globals.set('sucessos', sucessos);",
+                            "} else if (pm.response.code === 409) {",
+                            "    let conflitos = parseInt(pm.globals.get('conflitos')) + 1;",
+                            "    pm.globals.set('conflitos', conflitos);",
+                            "} else {",
+                            "    let outrosErros = parseInt(pm.globals.get('outros_erros')) + 1;",
+                            "    pm.globals.set('outros_erros', outrosErros);",
+                            "}"
+                        ]
+                    }
+                }
+            ],
+            "response": []
+        },
+        {
+            "name": "Com Lock Pessimista",
+            "request": {
+                "method": "POST",
+                "header": [
+                    {
+                        "key": "Content-Type",
+                        "value": "application/json",
+                        "type": "text"
+                    }
+                ],
+                "body": {
+                    "mode": "raw",
+                    "raw": "{\n    \"produtoId\": 3,\n    \"quantidade\": 3,\n    \"clienteId\": \"C003\"\n}"
+                },
+                "url": {
+                    "raw": "http://localhost:8080/pedido_pessimista/novo",
+                    "protocol": "http",
+                    "host": [
+                        "localhost"
+                    ],
+                    "port": "8080",
+                    "path": [
+                        "pedido_pessimista",
+                        "novo"
+                    ]
+                }
+            },
+            "event": [
+                {
+                    "listen": "test",
+                    "script": {
+                        "exec": [
+                            "if (!pm.globals.has('tempo_total')) {",
+                            "    pm.globals.set('tempo_total', '0');",
+                            "    pm.globals.set('sucessos', '0');",
+                            "    pm.globals.set('conflitos', '0');",
+                            "    pm.globals.set('outros_erros', '0');",
+                            "    pm.globals.set('quantidade_requisicoes', '0');",
+                            "}",
+                            "const tempoResposta = pm.response.responseTime;",
+                            "let tempoTotal = parseInt(pm.globals.get('tempo_total')) + tempoResposta;",
+                            "pm.globals.set('tempo_total', tempoTotal);",
+                            "let qtdRequisicoes = parseInt(pm.globals.get('quantidade_requisicoes')) + 1;",
+                            "pm.globals.set('quantidade_requisicoes', qtdRequisicoes);",
+                            "if (pm.response.code === 200) {",
+                            "    let sucessos = parseInt(pm.globals.get('sucessos')) + 1;",
+                            "    pm.globals.set('sucessos', sucessos);",
+                            "} else if (pm.response.code === 409) {",
+                            "    let conflitos = parseInt(pm.globals.get('conflitos')) + 1;",
+                            "    pm.globals.set('conflitos', conflitos);",
+                            "} else {",
+                            "    let outrosErros = parseInt(pm.globals.get('outros_erros')) + 1;",
+                            "    pm.globals.set('outros_erros', outrosErros);",
+                            "}"
+                        ]
+                    }
+                }
+            ],
+            "response": []
+        },
+        {
+            "name": "Resumo do Teste",
+            "request": {
+                "method": "GET",
+                "url": {
+                    "raw": "http://localhost:8080/resumo",
+                    "protocol": "http",
+                    "host": [
+                        "localhost"
+                    ],
+                    "port": "8080",
+                    "path": [
+                        "resumo"
+                    ]
+                }
+            },
+            "event": [
+                {
+                    "listen": "test",
+                    "script": {
+                        "exec": [
+                            "const tempoTotal = parseInt(pm.globals.get('tempo_total'));",
+                            "const quantidadeRequisicoes = parseInt(pm.globals.get('quantidade_requisicoes'));",
+                            "const tempoMedio = tempoTotal / quantidadeRequisicoes;",
+                            "const sucessos = pm.globals.get('sucessos');",
+                            "const conflitos = pm.globals.get('conflitos');",
+                            "const outrosErros = pm.globals.get('outros_erros');",
+                            "",
+                            "console.log('Relat\u00f3rio de Teste:');",
+                            "console.log(`Tempo M\u00e9dio de Resposta: ${tempoMedio} ms`);",
+                            "console.log(`Tempo Total: ${tempoTotal} ms`);",
+                            "console.log(`Requisi\u00e7\u00f5es Bem-sucedidas: ${sucessos}`);",
+                            "console.log(`Conflitos (409): ${conflitos}`);",
+                            "console.log(`Outros Erros: ${outrosErros}`);",
+                            "",
+                            "// Resetar vari\u00e1veis globais",
+                            "pm.globals.set('tempo_total', '0');",
+                            "pm.globals.set('sucessos', '0');",
+                            "pm.globals.set('conflitos', '0');",
+                            "pm.globals.set('outros_erros', '0');",
+                            "pm.globals.set('quantidade_requisicoes', '0');"
+                        ]
+                    }
+                }
+            ]
+        }
+    ]
+}
