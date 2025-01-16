@@ -17,7 +17,7 @@ public class SimuladorRequisicoes {
 
     public static void main(String[] args) throws Exception {
         int[] requisicoes = {100, 1000, 10000};
-        
+
         for (int qtdRequisicoes : requisicoes) {
             System.out.println("Simulando " + qtdRequisicoes + " requisições simultâneas...");
 
@@ -44,8 +44,8 @@ public class SimuladorRequisicoes {
                     connection.setRequestProperty("Content-Type", "application/json");
                     connection.setDoOutput(true);
 
-                    // Corpo da requisição
-                    String jsonInput = "{ \"produtoId\": 1, \"quantidade\": 1, \"clienteId\": \"C001\" }";
+                    // Corpo da requisição para o produto "PlayStation 5"
+                    String jsonInput = "{ \"produtoId\": 3, \"quantidade\": 1, \"clienteId\": \"C001\" }";
 
                     try (var os = connection.getOutputStream()) {
                         os.write(jsonInput.getBytes());
@@ -111,4 +111,3 @@ public class SimuladorRequisicoes {
         }
     }
 }
-

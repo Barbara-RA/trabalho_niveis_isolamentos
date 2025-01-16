@@ -4,9 +4,9 @@ Requisições Enviadas: 100
 Requisições Bem-Sucedidas (200): 0
 Conflitos (409): 0
 Outros Erros: 100
-Tempo Total de Requisições (ms): 2330
-Tempo Total de Simulação (ms): 2332
-Tempo Médio por Requisição (ms): 23.3
+Tempo Total de Requisições (ms): 2131
+Tempo Total de Simulação (ms): 2132
+Tempo Médio por Requisição (ms): 21.31
 ====================================================
 ====================================================
 Simulação: Lock Otimista
@@ -14,9 +14,9 @@ Requisições Enviadas: 100
 Requisições Bem-Sucedidas (200): 100
 Conflitos (409): 0
 Outros Erros: 0
-Tempo Total de Requisições (ms): 92
-Tempo Total de Simulação (ms): 92
-Tempo Médio por Requisição (ms): 0.92
+Tempo Total de Requisições (ms): 90
+Tempo Total de Simulação (ms): 90
+Tempo Médio por Requisição (ms): 0.9
 ====================================================
 ====================================================
 Simulação: Lock Pessimista
@@ -24,9 +24,9 @@ Requisições Enviadas: 100
 Requisições Bem-Sucedidas (200): 100
 Conflitos (409): 0
 Outros Erros: 0
-Tempo Total de Requisições (ms): 97
-Tempo Total de Simulação (ms): 97
-Tempo Médio por Requisição (ms): 0.97
+Tempo Total de Requisições (ms): 83
+Tempo Total de Simulação (ms): 83
+Tempo Médio por Requisição (ms): 0.83
 ====================================================
 ====================================================
 Simulação: Sem Lock
@@ -34,27 +34,57 @@ Requisições Enviadas: 1000
 Requisições Bem-Sucedidas (200): 0
 Conflitos (409): 0
 Outros Erros: 1000
-Tempo Total de Requisições (ms): 13416
-Tempo Total de Simulação (ms): 13418
-Tempo Médio por Requisição (ms): 13.416
+Tempo Total de Requisições (ms): 11867
+Tempo Total de Simulação (ms): 11869
+Tempo Médio por Requisição (ms): 11.867
 ====================================================
 ====================================================
 Simulação: Lock Otimista
 Requisições Enviadas: 1000
-Requisições Bem-Sucedidas (200): 808
+Requisições Bem-Sucedidas (200): 1000
 Conflitos (409): 0
-Outros Erros: 192
-Tempo Total de Requisições (ms): 895
-Tempo Total de Simulação (ms): 895
-Tempo Médio por Requisição (ms): 0.895
+Outros Erros: 0
+Tempo Total de Requisições (ms): 668
+Tempo Total de Simulação (ms): 670
+Tempo Médio por Requisição (ms): 0.668
 ====================================================
 ====================================================
 Simulação: Lock Pessimista
 Requisições Enviadas: 1000
-Requisições Bem-Sucedidas (200): 921
+Requisições Bem-Sucedidas (200): 951
 Conflitos (409): 0
-Outros Erros: 79
-Tempo Total de Requisições (ms): 607
-Tempo Total de Simulação (ms): 607
-Tempo Médio por Requisição (ms): 0.607
+Outros Erros: 49
+Tempo Total de Requisições (ms): 702
+Tempo Total de Simulação (ms): 704
+Tempo Médio por Requisição (ms): 0.702
+====================================================
+====================================================
+Simulação: Sem Lock
+Requisições Enviadas: 10000
+Requisições Bem-Sucedidas (200): 0
+Conflitos (409): 0
+Outros Erros: 10000
+Tempo Total de Requisições (ms): 55114
+Tempo Total de Simulação (ms): 55127
+Tempo Médio por Requisição (ms): 5.5114
+====================================================
+====================================================
+Simulação: Lock Otimista
+Requisições Enviadas: 10000
+Requisições Bem-Sucedidas (200): 1600
+Conflitos (409): 0
+Outros Erros: 8400
+Tempo Total de Requisições (ms): 22358
+Tempo Total de Simulação (ms): 22362
+Tempo Médio por Requisição (ms): 2.2358
+====================================================
+====================================================
+Simulação: Lock Pessimista
+Requisições Enviadas: 10000
+Requisições Bem-Sucedidas (200): 396
+Conflitos (409): 0
+Outros Erros: 9604
+Tempo Total de Requisições (ms): 26431
+Tempo Total de Simulação (ms): 26436
+Tempo Médio por Requisição (ms): 2.6431
 ====================================================
