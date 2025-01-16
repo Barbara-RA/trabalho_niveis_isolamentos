@@ -1,0 +1,60 @@
+====================================================
+Simulação: Sem Lock
+Requisições Enviadas: 100
+Requisições Bem-Sucedidas (200): 0
+Conflitos (409): 0
+Outros Erros: 100
+Tempo Total de Requisições (ms): 2330
+Tempo Total de Simulação (ms): 2332
+Tempo Médio por Requisição (ms): 23.3
+====================================================
+====================================================
+Simulação: Lock Otimista
+Requisições Enviadas: 100
+Requisições Bem-Sucedidas (200): 100
+Conflitos (409): 0
+Outros Erros: 0
+Tempo Total de Requisições (ms): 92
+Tempo Total de Simulação (ms): 92
+Tempo Médio por Requisição (ms): 0.92
+====================================================
+====================================================
+Simulação: Lock Pessimista
+Requisições Enviadas: 100
+Requisições Bem-Sucedidas (200): 100
+Conflitos (409): 0
+Outros Erros: 0
+Tempo Total de Requisições (ms): 97
+Tempo Total de Simulação (ms): 97
+Tempo Médio por Requisição (ms): 0.97
+====================================================
+====================================================
+Simulação: Sem Lock
+Requisições Enviadas: 1000
+Requisições Bem-Sucedidas (200): 0
+Conflitos (409): 0
+Outros Erros: 1000
+Tempo Total de Requisições (ms): 13416
+Tempo Total de Simulação (ms): 13418
+Tempo Médio por Requisição (ms): 13.416
+====================================================
+====================================================
+Simulação: Lock Otimista
+Requisições Enviadas: 1000
+Requisições Bem-Sucedidas (200): 808
+Conflitos (409): 0
+Outros Erros: 192
+Tempo Total de Requisições (ms): 895
+Tempo Total de Simulação (ms): 895
+Tempo Médio por Requisição (ms): 0.895
+====================================================
+====================================================
+Simulação: Lock Pessimista
+Requisições Enviadas: 1000
+Requisições Bem-Sucedidas (200): 921
+Conflitos (409): 0
+Outros Erros: 79
+Tempo Total de Requisições (ms): 607
+Tempo Total de Simulação (ms): 607
+Tempo Médio por Requisição (ms): 0.607
+====================================================
